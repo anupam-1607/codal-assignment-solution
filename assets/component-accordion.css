@@ -22,8 +22,6 @@
 .accordion {
   margin-top: 2.5rem;
   margin-bottom: 0;
-  border-top: 0.1rem solid rgba(var(--color-foreground), 0.08);
-  border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.08);
 }
 
 .accordion__title {
@@ -50,9 +48,25 @@
   margin-bottom: 1.5rem;
   word-break: break-word;
   overflow-x: auto;
-  padding: 0 0.6rem;
+  padding: 0 16px 0 0;
 }
 
 .accordion__content img {
   max-width: 100%;
 }
+
+.accordion span{font-family: 'MyriadPro-Regular';font-size: 16px; line-height: 24px;color: #3E4545}
+.accordion h3{cursor: pointer;position: relative;}
+.accordion h3::after{content: '+';position: absolute;right: 16px;left: auto;height: 15px;width: 15px;}.accordion h3.accordion__trigger--active::after{content: '-';right: 12px;}
+.accordion li{padding-left: 40px;position: relative;margin-bottom: 16px;}
+.accordion li::before {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: 7px;
+  height: 10px;
+  width: 10px;
+  background: url('Vector.png') no-repeat center top;
+  background-size: contain;
+}
+

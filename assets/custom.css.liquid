@@ -1,0 +1,251 @@
+/* Commom CSS Start */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  letter-spacing: 0;
+  color: rgba(var(--color-foreground), 1);
+}
+
+/* Font Family Section Start */
+@font-face {
+    font-family: 'Eurostile-Demi';
+    src: url("{{ 'Eurostile-Demi.eot' | asset_url }}");
+    src: url("{{ 'Eurostile-Demi.eot?#iefix' | asset_url }}") format('embedded-opentype'),
+        url("{{ 'Eurostile-Demi.woff2' | asset_url }}") format('woff2'),
+        url("{{ 'Eurostile-Demi.woff' | asset_url }}") format('woff'),
+        url("{{ 'Eurostile-Demi.ttf' | asset_url }}") format('truetype'),
+        url("{{ 'Eurostile-Demi.svg#Eurostile-Demi' | asset_url }}") format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'MyriadPro-Bold';
+    src: url("{{ 'MyriadPro-Bold.eot' | asset_url }}");
+    src: url("{{ 'MyriadPro-Bold.eot?#iefix' | asset_url }}") format('embedded-opentype'),
+    url("{{ 'MyriadPro-Bold.woff2' | asset_url }}") format('woff2'),
+    url("{{ 'MyriadPro-Bold.woff' | asset_url }}") format('woff'),
+    url("{{ 'MyriadPro-Bold.ttf' | asset_url }}") format('truetype'),
+    url("{{ 'MyriadPro-Bold.svg#MyriadPro-Bold' | asset_url }}") format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+  font-family: 'MyriadPro-Regular';
+  src: url("{{ 'MyriadPro-Regular.eot' | asset_url }}");
+  src: url("{{ 'MyriadPro-Regular.eot?#iefix' | asset_url }}") format('embedded-opentype'),
+  url("{{ 'MyriadPro-Regular.woff2' | asset_url }}") format('woff2'),
+  url("{{ 'MyriadPro-Regular.woff' | asset_url }}") format('woff'),
+  url("{{ 'MyriadPro-Regular.ttf' | asset_url }}") format('truetype'),
+  url("{{ 'MyriadPro-Regular.svg#MyriadPro-Regular' | asset_url }}") format('svg');
+  font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+
+}
+
+/* Font Family Section End */
+
+h1{font-family: 'Eurostile-Demi';
+font-size: 24px; 
+line-height: 32px;
+color: #222;}
+
+h3{
+  font-family: 'MyriadPro-Bold';
+  font-size: 24px; 
+  line-height: 28px;
+  color: #0F172A;
+}
+
+strong{
+  font-family: 'MyriadPro-Bold';
+  font-size: 20px; 
+  line-height: 28px;
+  color: #0F172A;
+  padding-bottom: 16px;
+  padding-top: 32px;
+  display: block;
+}
+
+a{
+  outline: none;
+  text-decoration: none;
+}
+h1,h2,h3,h4,h5,h6,p,.h1,.h2,.h3,.h4,.h5,.h6{
+  margin: 0px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+ul{
+  padding: 0px;
+  margin: 0px;
+}
+li{
+  list-style-type: none;
+}
+img{
+  max-width: 100%;
+  height: auto;
+}
+select::-ms-expand {
+  display: none;
+}
+.someinput::-ms-clear {
+  display: none;
+}
+
+::-ms-clear { display: none; }
+
+/* Product Page CSS Start */
+.product__price-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.product__sku {
+  font-size: 12px;
+  line-height: 16px;
+  padding: 4px 10px;
+  border-radius: 9999px;
+}
+
+.product__availability {
+  margin-bottom: 1rem;
+  color: var(--color-success);
+}
+
+.product__form-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* .product__form-wrapper .price-per-item__container{width: 35%;} */
+
+/* .product__form-wrapper .add-tocart-buttom-form{width:64%;} */
+
+.add-tocart-buttom-form button{background-color: #FFBA00;color:#222;font-size: 14px; line-height: 16px;text-transform: uppercase;font-family: 'Eurostile-Demi';}
+
+.add-tocart-buttom-form button:hover{background-color: #FFE399;}
+
+.quantity {
+  display: flex;
+  align-items: center;
+}
+.cart-notification{z-index: 11;}
+
+.variant-price{    display: block;   padding-top: 6px;font-size: 14px; line-height: 20px;}
+
+  .product-form__input--pill input[type='radio']:checked + label .variant-price{color: #00AD8E;}
+
+  .button:not([disabled]):hover::after{box-shadow: none;}
+
+  .product-form__input--pill input[type=radio]+label:hover{    background-color: #effefa;
+    color: #0a6557;
+    border: var(--variant-pills-border-width) solid #51F7CE;}
+
+    .metafield-rich_text_field p {font-family: 'MyriadPro-Regular';font-size: 16px; line-height:24px;}
+  
+
+/* Breadcrumbs CSS Start  */
+.product-sticky-bar {
+  position: sticky;
+  top: 0;
+  background-color: #f3f3f3;
+  z-index: 10;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 55px;
+}
+
+.product-sticky-bar__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.product-sticky-bar__breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: 14px;
+  line-height: 20px;
+  font-family: 'MyriadPro-Regular';
+  color: #333;
+}
+
+.product-sticky-bar__breadcrumb-link {
+  color: #555;
+  text-decoration: none;
+  margin-right: 0.4rem;
+}
+
+.product-sticky-bar__breadcrumb-link:hover {
+  text-decoration: underline;
+}
+
+.product-sticky-bar__breadcrumb-current {
+  font-weight: 600;
+  color: #000;
+}
+
+.breadcrumb__separator {
+  margin: 0 0.4rem;
+  color: #888;
+}
+
+.product-sticky-bar__action {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.product-sticky-bar__price {
+  font-size: 16px;
+  line-height: 24px;
+  font-family: 'Eurostile-Demi';
+}
+
+.product-sticky-bar__button {
+  background-color: #ffc107;
+  border: none;
+  color: #000;
+  padding: 0.6rem 1.2rem;font-size: 14px; line-height: 16px;font-family: 'Eurostile-Demi';
+}
+
+.product-sticky-bar__button::after{box-shadow: none;}
+
+/* Breadcrumbs CSS End  */
+
+/* Product Page CSS End */
+
+/* Media Query Start */
+@media(max-width: 1366px){}
+
+@media(max-width: 1024px){}
+
+@media(max-width: 991px){
+  .product-sticky-bar__action{display: none;}.product-sticky-bar__container{padding-top: 6px; padding-bottom: 6px;}
+}
+
+@media(max-width: 767px){}
+
+/* Media Query End */
+
+/* Commom CSS End */

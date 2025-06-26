@@ -25,6 +25,9 @@
 
 .price__regular .price-item--regular {
   margin-right: 0;
+  color: #006747;
+  font-family: 'Eurostile-Demi';
+  font-size: 32px; line-height: 46px;
 }
 
 .price:not(.price--show-badge) .price-item--last:last-of-type {
