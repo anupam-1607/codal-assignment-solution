@@ -94,7 +94,18 @@
     <label for="{{ input_id }}">
       {{ value -}}
       {{ label_unavailable }}
+      {%- for variant in product.variants -%}
+        {%- if variant.options contains value -%}
+       
+          <span class="variant-price"> {{ variant.price | money }}</span>
+          
+          {% break %}
+        {%- endif -%}
+      {%- endfor -%}
     </label>
+    
+    
+
   {%- elsif picker_type == 'dropdown' or picker_type == 'swatch_dropdown' -%}
     <option
       id="{{ input_id }}"
