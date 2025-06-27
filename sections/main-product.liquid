@@ -531,6 +531,7 @@
                   
                   
                 </div>
+
                 {% if product.metafields.custom.specification %}
                 <h3 class="accordion__trigger" rel="tab2">Specification</h3>
                 <div id="tab2" class="accordion__content">
@@ -550,24 +551,26 @@
                 </div>
               {% endif %}
 
-              {% if product.metafields.custom.data_sheet %}
+              {% assign sheets = product.metafields.custom.data_sheet.value %}
+
+              {% if sheets %}
                 <h3 class="accordion__trigger" rel="tab3">Product Data Sheets</h3>
                 <div id="tab3" class="accordion__content">
-                  
-                    <div class="product__data-sheet">
-                      {% assign sheet = product.metafields.custom.data_sheet.value %}
-
-                        {% if sheet %}
-                          <a href="{{ sheet.file.value }}" target="_blank" rel="noopener">
-                            📄 {{ sheet.title | default: 'View Data Sheet (PDF)' }}
-                          </a>
-                        {% endif %}
-
-                    </div>
-                  
-                  
+                  <div class="product__data-sheet-list">
+                    {% for sheet in sheets %}
+                      <div class="product__data-sheet-item">
+                        <a href="{{ sheet.url }}" target="_blank" rel="noopener">
+                          <img src="{{ 'pdf.svg' | asset_url }}" alt="PDF Icon" width="18" height="18" style="margin-right: 6px;">
+                          {{ sheet.name }}
+                        </a>
+                      </div>
+                    {% endfor %}
+                  </div>
                 </div>
               {% endif %}
+              
+              
+              
               </div>
             </div>
           </div>
@@ -632,7 +635,7 @@
 
           <hr class="product__divider" />
 
-          <div class="product__form-wrapper">
+          <div class="product__form-wrapper custom-product-btn">
             <div class="price-per-item__container">
                             <quantity-input class="quantity" data-url="{{ product.url }}" data-section="{{ section.id }}">
                               <button class="quantity__button" name="minus" type="button">
@@ -782,13 +785,13 @@
                           
 
                           <div class="add-tocart-buttom-form">
-            {%- render 'buy-buttons',
-                          block: block,
-                          product: product,
-                          product_form_id: product_form_id,
-                          section_id: section.id,
-                          show_pickup_availability: true
-                        -%}
+                            {%- render 'buy-buttons',
+                                          block: block,
+                                          product: product,
+                                          product_form_id: product_form_id,
+                                          section_id: section.id,
+                                          show_pickup_availability: true
+                                        -%}
             </div>
 
           </div>
@@ -857,7 +860,25 @@
 
   
     </div>
-</product-info>
+
+
+    <div class="product__form-wrapper product_add_btn_fixed">
+      <span class="product-sticky-bar__price">{{ product.price | money }}</span>
+                    
+
+                    <div class="add-tocart-buttom-form">
+      {%- render 'buy-buttons',
+                    block: block,
+                    product: product,
+                    product_form_id: product_form_id,
+                    section_id: section.id,
+                    show_pickup_availability: true
+                  -%}
+      </div>
+
+    </div>
+
+    </product-info>
 
 {% schema %}
 {

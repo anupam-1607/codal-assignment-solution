@@ -140,28 +140,63 @@ select::-ms-expand {
 
 /* .product__form-wrapper .add-tocart-buttom-form{width:64%;} */
 
-.add-tocart-buttom-form button{background-color: #FFBA00;color:#222;font-size: 14px; line-height: 16px;text-transform: uppercase;font-family: 'Eurostile-Demi';}
+.add-tocart-buttom-form button{
+  background-color: #FFBA00;
+  color:#222;
+  font-size: 14px; 
+  line-height: 16px;
+  text-transform: uppercase;
+  font-family: 'Eurostile-Demi';
+}
 
-.add-tocart-buttom-form button:hover{background-color: #FFE399;}
+.add-tocart-buttom-form button:hover{
+  background-color: #FFE399;
+}
 
 .quantity {
   display: flex;
   align-items: center;
 }
-.cart-notification{z-index: 11;}
+.cart-notification{
+  z-index: 11;
+}
 
-.variant-price{    display: block;   padding-top: 6px;font-size: 14px; line-height: 20px;}
+.variant-price{    
+  display: block;   
+  padding-top: 6px;
+  font-size: 14px; 
+  line-height: 20px;
+}
 
-  .product-form__input--pill input[type='radio']:checked + label .variant-price{color: #00AD8E;}
+.product-form__input--pill input[type='radio']:checked + label .variant-price{
+  color: #00AD8E;
+}
 
-  .button:not([disabled]):hover::after{box-shadow: none;}
+.button:not([disabled]):hover::after{
+  box-shadow: none;
+}
 
-  .product-form__input--pill input[type=radio]+label:hover{    background-color: #effefa;
+  .product-form__input--pill input[type=radio]+label:hover{    
+    background-color: #effefa;
     color: #0a6557;
-    border: var(--variant-pills-border-width) solid #51F7CE;}
+    border: var(--variant-pills-border-width) solid #51F7CE;
+  }
 
-    .metafield-rich_text_field p {font-family: 'MyriadPro-Regular';font-size: 16px; line-height:24px;}
+ .metafield-rich_text_field p {font-family: 'MyriadPro-Regular';font-size: 16px; line-height:24px;}
   
+.product_add_btn_fixed{    position: fixed;
+  bottom: 0;
+  top: auto;
+  background-color: #EAEAEA;
+  padding-left: 20px; display: none;
+  width: 100%;
+  justify-content: space-between;}
+
+  .product_add_btn_fixed.active {
+    display: flex !important;
+  }
+.product__data-sheet-list{padding-top: 12px;}
+.product__data-sheet-item {padding-bottom: 12px;}
 
 /* Breadcrumbs CSS Start  */
 .product-sticky-bar {
@@ -242,9 +277,16 @@ select::-ms-expand {
 
 @media(max-width: 991px){
   .product-sticky-bar__action{display: none;}.product-sticky-bar__container{padding-top: 6px; padding-bottom: 6px;}
+  hr{    margin: 2rem 0;}
 }
 
-@media(max-width: 767px){}
+@media(max-width: 767px){
+  .product__column-sticky{
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #EAEAEA;
+  }
+}
 
 /* Media Query End */
 
